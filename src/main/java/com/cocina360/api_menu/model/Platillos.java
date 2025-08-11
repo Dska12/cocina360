@@ -1,5 +1,6 @@
 package com.cocina360.api_menu.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,10 +13,13 @@ public class Platillos {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "nombre", nullable = false)
     private String nombre;
     
+    @Column(name = "precio", nullable = false)
     private Double precio;
     
+    @Column(name = "diponible", nullable = false)
     private Boolean disponible;
 
     public Long getId() {
