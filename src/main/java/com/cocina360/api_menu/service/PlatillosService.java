@@ -1,6 +1,7 @@
 package com.cocina360.api_menu.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,10 @@ public class PlatillosService {
 
     public void eliminar(Long id){
         this.platillosRepo.deleteById(id);
+    }
+
+    public Optional<Platillos> buscarXId(Long id){
+        return platillosRepo.findById(id);
     }
     
 }
