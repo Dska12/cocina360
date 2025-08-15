@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Platillos {
@@ -19,7 +20,8 @@ public class Platillos {
     @Column(name = "precio", nullable = false)
     private Double precio;
     
-    @Column(name = "diponible", nullable = false)
+    @Column(name = "disponible")
+    @NotNull
     private Boolean disponible;
 
     public Long getId() {
@@ -60,5 +62,10 @@ public class Platillos {
         this.precio = precio;
         this.disponible = disponible;
     }
+
+    public Platillos() {
+    }
+
+    
     
 }
